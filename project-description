@@ -1,0 +1,43 @@
+Web application that assists you in creating a HIIT (high intensity interval training) workout.
+
+  Variables
+    length (10 min, 20 min, 30 min) or (10 min, 15 min, 20 min)
+    muscle group you want to target (legs, upper body, full body, abs) or (glutes, arms, quads, hammys, chest, back, shoulders)
+    difficulty (determined by rest time/including or not including certain exercises)
+
+
+    each exercise/rest section will be 1 minute (hard = 45s on 15s rest, intermediate = 40s on 20s off, beginner = 30s on 30s off)
+    10 min workout = 2 sets of 5 exercises
+    15 min workout = 2 sets of 7 exercises with 1 min break in between
+    20 min workout = 2 sets of 9 exercises with 2 minute rest in between
+    30 min workout = 3 sets of 8 workouts with 2 minute rest in between
+
+  Functionality
+    click on length
+    check muscle group (maybe in order of priority)
+    click on difficulty
+
+      if legs selected and if length = 10min
+        randomly select 1 glute exercise
+        randomly select 1 quad exercises
+        randomly select 1 hammy exercises
+        randomly select 2 jumping exercises
+
+      if legs selected and if length = 15min
+        randomly select 2 glute exercise
+        randomly select 2 quad exercises
+        randomly select 1 hammy exercises
+        randomly select 2 jumping exercises
+
+        if legs selected and if length = 20min
+          randomly select 2 glute exercise
+          randomly select 2 quad exercises
+          randomly select 1 hammy exercises
+          randomly select 1 calf exercise
+          randomly select 2 jumping exercises
+          randomly select 1 leg exercise
+
+      once the workout comes up (on a new page), user can then hit a refresh button next to a certain exercise to cycle
+      through to another random exercise in that category. Or they can search/chose one they would like to replace it with
+
+      they can also change the difficulty which would change the amount of rest per minute.  
