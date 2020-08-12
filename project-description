@@ -9,7 +9,7 @@ Web application that assists you in creating a HIIT (high intensity interval tra
     each exercise/rest section will be 1 minute (hard = 45s on 15s rest, intermediate = 40s on 20s off, beginner = 30s on 30s off)
     10 min workout = 2 sets of 5 exercises
     15 min workout = 2 sets of 7 exercises with 1 min break in between
-    20 min workout = 2 sets of 9 exercises with 2 minute rest in between
+    20 min workout = 2 sets of 9 exercises with 2 minute rest in between or 3 of 6 with 1 min rest
     30 min workout = 3 sets of 8 workouts with 2 minute rest in between
 
   Functionality
@@ -45,5 +45,16 @@ Web application that assists you in creating a HIIT (high intensity interval tra
 LEGS
   Quads - front lunges, split squats, squat holds, frog squats
   glutes/hammys - glute bridge, single leg hip thrust, squats, leg kick backs, romanian deadlifts, bent knee fire hydrants
-  calf - calf raise, farmers walk on toes, lunge walk with calf raise, skipping rope/bounces
-  jump - squat jump, jump lunge, Xplodes, burpee, ski jumps, broad jump/walk back  
+  calf - lunge walk with calf raise, skipping rope/toe bounces
+
+Jumps
+  squat jump, jump lunge, Xplodes, burpee, ski jumps, broad jump body drops
+
+ARMS
+  arms - tricep dips, close grip push ups, air punches, I's Y's T's
+  chest - pushups, T-Rotations,
+  shoulders - Polar Press, Shoulder taps, straddles
+
+CORE
+  Mountain Climbers, Prone Hold, Crunches, Bicycle Crunch, Sit Ups, Toe Touches, Jack-knives, Flutter Kicks,
+  Leg Raises, Heel Touches
