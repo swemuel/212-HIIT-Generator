@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block title %} HIIT Generator {% endblock %}
+
+  {% block header %}
+
+  {% endblock %}
+
+  {% block content %}
+
+  <form action="result.html" method="post">
+
+
+
+    <div id="variables">
+      <h1>Workout Options</h1>
+
+      <div>
+        <h2>&bull; Muscle Group &bull;</h2>
+
+          <ul class="options">
+            {% for muscle in muscles %}
+              <li>
+                <input type="radio" name="muscle" />
+                {{ muscle }}
+              </li>
+            {%endfor%}
+          </ul>`
+      </div>
+
+      <div>
+
+        <h2>&bull; Workout Length &bull;</h2>
+
+          <ul class="options">
+            {% for length in length %}
+              <li>
+                <input type="radio" name="length">
+                {{ length }}
+              </li>
+            {% endfor %}
+          </ul>
+
+      </div>
+
+      <div>
+        <h2>&bull; Difficulty &bull;</h2>
+
+          <ul class="options">
+            {% for difficulty in difficulty %}
+              <li>
+                <input type="radio" name="difficulty">
+                {{ difficulty }}
+              </li>
+            {% endfor %}
+          </ul>
+      </div>
+
+      <div>
+          <p>
+            <a class="btn-blue" href="{{ url_for('result') }}">HIIT ME</a>
+          </p>
+      </div>
+    </div>
+
+  </form>
+
+    <div id="footer">
+      {{disclaimer|upper}}
+    </div>
+
+
+{% endblock %}
