@@ -8,7 +8,7 @@
 
   {% block content %}
 
-  <form action="result.html" method="post">
+  <form action="/result" method="post">
 
 
 
@@ -21,11 +21,11 @@
           <ul class="options">
             {% for muscle in muscles %}
               <li>
-                <input type="radio" name="muscle" />
+                <input type="radio" name="{{ muscle }}"/>
                 {{ muscle }}
               </li>
             {%endfor%}
-          </ul>`
+          </ul>
       </div>
 
       <div>
@@ -35,7 +35,7 @@
           <ul class="options">
             {% for length in length %}
               <li>
-                <input type="radio" name="length">
+                <input type="radio" name="{{ length }}">
                 {{ length }}
               </li>
             {% endfor %}
@@ -49,18 +49,18 @@
           <ul class="options">
             {% for difficulty in difficulty %}
               <li>
-                <input type="radio" name="difficulty">
+                <input type="radio" name="{{difficulty}}">
                 {{ difficulty }}
               </li>
             {% endfor %}
           </ul>
       </div>
 
-      <div>
+
           <p>
-            <a class="btn-blue" href="{{ url_for('result') }}">HIIT ME</a>
+            <input type="submit" value="workout" class="btn-yellow">
           </p>
-      </div>
+
     </div>
 
   </form>
