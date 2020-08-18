@@ -21,8 +21,8 @@
           <ul class="options">
             {% for muscle in muscles %}
               <li>
-                <input type="radio" name="{{ muscle }}"/>
-                {{ muscle }}
+                <input type="radio" name="muscle" value="{{ muscle[0] }}"/>
+                {{ muscle[0] }}
               </li>
             {%endfor%}
           </ul>
@@ -35,8 +35,8 @@
           <ul class="options">
             {% for length in length %}
               <li>
-                <input type="radio" name="{{ length }}">
-                {{ length }}
+                <input type="radio" name="length" value="{{ length[0] }}">
+                {{ length[0] }}
               </li>
             {% endfor %}
           </ul>
@@ -49,8 +49,8 @@
           <ul class="options">
             {% for difficulty in difficulty %}
               <li>
-                <input type="radio" name="{{difficulty}}">
-                {{ difficulty }}
+                <input type="radio" name="difficulty" value="{{difficulty[0]}}">
+                {{ difficulty[0] }}
               </li>
             {% endfor %}
           </ul>

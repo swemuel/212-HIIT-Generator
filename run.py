@@ -50,5 +50,14 @@ def result():
     db = sqlite3.connect(HIITDB)
     workout = fetchWorkout(db)
     db.close()
-    print(request.form)
-    return render_template('result.html')
+    m = (request.form['muscle'])
+    l = (request.form['length'])
+    d = (request.form['difficulty'])
+    print(m, l, d)
+
+    if l == '20mins':
+        return render_template('20mins.html')
+    elif l == '15mins':
+         return render_template('15mins.html')
+    elif l == '10mins':
+        return render_template('result.html')
