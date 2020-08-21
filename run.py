@@ -29,9 +29,22 @@ def fetchWorkout(db): #gets data from database for index.html
 
     return {'muscle_group':muscle_group, 'length':length, 'difficulty':difficulty}
 
+def coreData(db):
+
+    core = []
+    cur = db.execute('SELECT exercise FROM core')
+    for co in cur:
+        core.append(list(co))
+
+    jumps = []
+    cur = db.execute('SELECT exercise FROM jumps WHERE core == 1')
+    for ju in cur:
+        core.append(list(ju))
+
+    return{'core':core, 'jumps':jumps}
 
 #def twentyMinutes(db):
-def legs(db): #gets data from legs table for results
+def legsData(db): #gets data from legs table for results
 
     legs = []
     cur = db.execute('SELECT exercise FROM legs WHERE quads == 1')
@@ -53,25 +66,25 @@ def legs(db): #gets data from legs table for results
 
     return {'legs':legs, 'jumps':jumps}
 
-def armsResult(db):
+def armsData(db):
 
     arms = []
     cur = db.execute('SELECT exercise FROM arms WHERE arms == 1')
     for a in cur:
-        legs.append(list(a))
+        arms.append(list(a))
 
     cur = db.execute('SELECT exercise FROM arms WHERE chest == 1')
     for ch in cur:
-        legs.append(list(ch))
+        arms.append(list(ch))
 
     cur = db.execute('SELECT exercise FROM arms WHERE shoulders == 1')
     for s in cur:
-        legs.append(list(s))
+        arms.append(list(s))
 
     jumps = []
     cur = db.execute('SELECT exercise FROM jumps WHERE arms == 1')
     for j in cur:
-        legs.append(list(j))
+        arms.append(list(j))
 
 
     return {'jumps':jumps, 'arms':arms}
@@ -104,14 +117,29 @@ def result():
     d = (request.form['difficulty'])
     print(m, l, d)
 
-    if l == '20mins' and m == 'arms':
+    if l == '20mins' and m == 'Arms':
 
         db = sqlite3.connect(HIITDB)
-        muscleResult = armsResult(db)
+        muscleResult = armsData(db) #brings in database data
         db.close()
 
         return render_template('20mins.html', target=muscleResult['arms'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
 
+    elif l == '20mins' and m == 'Legs':
+
+        db = sqlite3.connect(HIITDB)
+        muscleResult = legsData(db)
+        db.close()
+
+        return render_template('20mins.html', target=muscleResult['legs'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
+
+    elif l == '20mins' and m == 'Core':
+
+            db = sqlite3.connect(HIITDB)
+            muscleResult = coreData(db)
+            db.close()
+
+            return render_template('20mins.html', target=muscleResult['core'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
     elif l == '15mins':
          return render_template('15mins.html')
     elif l == '10mins':
