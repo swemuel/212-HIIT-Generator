@@ -9,7 +9,7 @@ muscle_group = ['Legs','Arms', 'Core']
 length = ['10mins', '15mins', '20mins']
 difficulty = ['Easy', 'Medium', 'Hard']
 '''
-def fetchWorkout(db):
+def fetchWorkout(db): #gets data from database for index.html
 
     muscle_group = []
     cur = db.execute('SELECT muscles FROM muscle_group')
@@ -30,7 +30,8 @@ def fetchWorkout(db):
     return {'muscle_group':muscle_group, 'length':length, 'difficulty':difficulty}
 
 
-def twentyMinutes(db):
+#def twentyMinutes(db):
+def legs(db): #gets data from legs table for results
 
     legs = []
     cur = db.execute('SELECT exercise FROM legs WHERE quads == 1')
@@ -41,11 +42,39 @@ def twentyMinutes(db):
     for g in cur:
         legs.append(list(g))
 
-    print(r)
+    cur = db.execute('SELECT exercise FROM legs WHERE calves == 1')
+    for c in cur:
+        legs.append(list(c))
 
-    return {'legs':legs}
+    jumps = []
+    cur = db.execute('SELECT exercise FROM jumps WHERE legs == 1')
+    for j in cur:
+        legs.append(list(j))
+
+    return {'legs':legs, 'jumps':jumps}
+
+def armsResult(db):
+
+    arms = []
+    cur = db.execute('SELECT exercise FROM arms WHERE arms == 1')
+    for a in cur:
+        legs.append(list(a))
+
+    cur = db.execute('SELECT exercise FROM arms WHERE chest == 1')
+    for ch in cur:
+        legs.append(list(ch))
+
+    cur = db.execute('SELECT exercise FROM arms WHERE shoulders == 1')
+    for s in cur:
+        legs.append(list(s))
+
+    jumps = []
+    cur = db.execute('SELECT exercise FROM jumps WHERE arms == 1')
+    for j in cur:
+        legs.append(list(j))
 
 
+    return {'jumps':jumps, 'arms':arms}
 
 
 
@@ -75,13 +104,13 @@ def result():
     d = (request.form['difficulty'])
     print(m, l, d)
 
-    if l == '20mins':
+    if l == '20mins' and m == 'arms':
 
         db = sqlite3.connect(HIITDB)
-        workout = twentyMinutes(db)
+        muscleResult = armsResult(db)
         db.close()
 
-        return render_template('20mins.html', legs=workout['legs'])
+        return render_template('20mins.html', target=muscleResult['arms'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
 
     elif l == '15mins':
          return render_template('15mins.html')
