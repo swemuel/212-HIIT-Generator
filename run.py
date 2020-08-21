@@ -29,6 +29,26 @@ def fetchWorkout(db):
 
     return {'muscle_group':muscle_group, 'length':length, 'difficulty':difficulty}
 
+
+def twentyMinutes(db):
+
+    legs = []
+    cur = db.execute('SELECT exercise FROM legs WHERE quads == 1')
+    for q in cur:
+        legs.append(list(q))
+
+    cur = db.execute('SELECT exercise FROM legs WHERE glutes == 1')
+    for g in cur:
+        legs.append(list(g))
+
+    print(r)
+
+    return {'legs':legs}
+
+
+
+
+
 @app.route('/')
 def index():
 
@@ -56,7 +76,13 @@ def result():
     print(m, l, d)
 
     if l == '20mins':
-        return render_template('20mins.html')
+
+        db = sqlite3.connect(HIITDB)
+        workout = twentyMinutes(db)
+        db.close()
+
+        return render_template('20mins.html', legs=workout['legs'])
+
     elif l == '15mins':
          return render_template('15mins.html')
     elif l == '10mins':
