@@ -17,11 +17,25 @@
   {% endblock %}
 
   {% block content %}
+
     <div id="header">
 
       <h1>Your Workout</h1>
 
         <p>10 mins</p>
 
+    </div>
+
+    <div id="exercises">
+      <div>
+        <ol>
+          {% for exercise in target %}
+          <li>
+            {{ exercise[0] }}
+          </li>
+          {% endfor %}
+        </ol>
+
+      </div>
     </div>
   {% endblock %}

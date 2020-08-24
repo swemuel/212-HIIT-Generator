@@ -117,6 +117,7 @@ def result():
     d = (request.form['difficulty'])
     print(m, l, d)
 
+#20 minutes
     if l == '20mins' and m == 'Arms':
 
         db = sqlite3.connect(HIITDB)
@@ -140,7 +141,51 @@ def result():
             db.close()
 
             return render_template('20mins.html', target=muscleResult['core'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
-    elif l == '15mins':
-         return render_template('15mins.html')
-    elif l == '10mins':
-        return render_template('result.html')
+
+#15 minutes
+
+    elif l == '15mins' and m == 'Arms':
+        db = sqlite3.connect(HIITDB)
+        muscleResult = armsData(db) #brings in database data
+        db.close()
+        return render_template('15mins.html', target=muscleResult['arms'], jumps=muscleResult['jumps'])
+
+    elif l == '15mins' and m == 'Legs':
+
+        db = sqlite3.connect(HIITDB)
+        muscleResult = legsData(db)
+        db.close()
+
+        return render_template('15mins.html', target=muscleResult['legs'], jumps=muscleResult['jumps'])
+
+    elif l == '15mins' and m == 'Core':
+
+            db = sqlite3.connect(HIITDB)
+            muscleResult = coreData(db)
+            db.close()
+
+            return render_template('15mins.html', target=muscleResult['core'], jumps=muscleResult['jumps'])
+
+
+#10 minutes
+    elif l == '10mins' and m == 'Arms':
+        db = sqlite3.connect(HIITDB)
+        muscleResult = armsData(db) #brings in database data
+        db.close()
+        return render_template('result.html', target=muscleResult['arms'], jumps=muscleResult['jumps'])
+
+    elif l == '10mins' and m == 'Legs':
+
+        db = sqlite3.connect(HIITDB)
+        muscleResult = legsData(db)
+        db.close()
+
+        return render_template('result.html', target=muscleResult['legs'], jumps=muscleResult['jumps'])
+
+    elif l == '10mins' and m == 'Core':
+
+            db = sqlite3.connect(HIITDB)
+            muscleResult = coreData(db)
+            db.close()
+
+            return render_template('result.html', target=muscleResult['core'], jumps=muscleResult['jumps'])
