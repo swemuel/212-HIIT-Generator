@@ -26,15 +26,32 @@
     </div>
 
     <div id="exercises">
-      <div>
+      <div id='exLeft'>
+        
         <ol>
           {% for exercise in target %}
           <li>
-            {{ exercise[0] }}
+           {{ exercise[0] }}
           </li>
+
           {% endfor %}
         </ol>
 
+      </div>
+
+
+
+        <div id="exRight">
+            <ol>
+              {% for exercise in target %}
+              <li>
+                {{ exercise[0] }}
+              </li>
+
+              {% endfor %}
+
+
+            </ol>
       </div>
     </div>
   {% endblock %}
