@@ -18,16 +18,25 @@
 
   {% block content %}
     <div id="header">
+      <div id="title">
+
 
       <h1>Your Workout</h1>
 
-        <p>20 mins</p>
 
+     </div>
+        <h2>20 mins</h2>
+
+        <div id="description">
+
+        <h3>Each exercise will be performed for {{rest}}</h3>
+
+      </div>
     </div>
 
-    <div id="exercises">
-      <div id='exLeft'>
-        
+    <div id="variables">
+      <div>
+
         <ol>
           {% for exercise in target %}
           <li>
@@ -39,9 +48,11 @@
 
       </div>
 
+      <div id="rest">
+        2 Minutes Rest
+      </div>
 
-
-        <div id="exRight">
+        <div>
             <ol>
               {% for exercise in target %}
               <li>
@@ -53,5 +64,11 @@
 
             </ol>
       </div>
+    </div>
+    
+    <div class="center-text">
+        <p>
+          <a class="btn-yellow" href="index.html">Home</a>
+       </p>
     </div>
   {% endblock %}

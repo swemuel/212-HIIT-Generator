@@ -111,7 +111,15 @@ def result():
     m = (request.form['muscle'])
     l = (request.form['length'])
     d = (request.form['difficulty'])
+
+    rest = ''
     print(m, l, d)
+    if d == 'Hard':
+        rest = '50 seconds work followed by 10 seconds rest'
+    elif d == 'Medium':
+        rest = '45 seconds work followed by 15 seconds rest'
+    elif d == 'Easy':
+        rest = '40 seconds work followed by 10 seconds rest'
 
 #20 minutes
     if l == '20mins' and m == 'Arms':
@@ -123,7 +131,7 @@ def result():
 
         selection(muscleResult['arms'], 9)
 
-        return render_template('20mins.html', target=muscleResult['arms'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
+        return render_template('20mins.html', rest=rest, target=muscleResult['arms'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
 
     elif l == '20mins' and m == 'Legs':
 
@@ -135,7 +143,7 @@ def result():
 
 
 
-        return render_template('20mins.html', target=muscleResult['legs'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
+        return render_template('20mins.html', rest=rest, target=muscleResult['legs'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
 
     elif l == '20mins' and m == 'Core':
 
@@ -146,7 +154,7 @@ def result():
             selection(muscleResult['core'], 9)
 
 
-            return render_template('20mins.html', target=muscleResult['core'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
+            return render_template('20mins.html', rest=rest, target=muscleResult['core'], jumps=muscleResult['jumps']) #things that can be accessed in our .htmls
 
 #15 minutes
 
@@ -158,7 +166,7 @@ def result():
         selection(muscleResult['arms'], 7)
 
 
-        return render_template('15mins.html', target=muscleResult['arms'], jumps=muscleResult['jumps'])
+        return render_template('15mins.html', rest=rest, target=muscleResult['arms'], jumps=muscleResult['jumps'])
 
     elif l == '15mins' and m == 'Legs':
 
@@ -168,7 +176,7 @@ def result():
 
         selection(muscleResult['legs'], 7)
 
-        return render_template('15mins.html', target=muscleResult['legs'], jumps=muscleResult['jumps'])
+        return render_template('15mins.html', rest=rest, target=muscleResult['legs'], jumps=muscleResult['jumps'])
 
     elif l == '15mins' and m == 'Core':
 
@@ -178,7 +186,7 @@ def result():
 
             selection(muscleResult['core'], 7)
 
-            return render_template('15mins.html', target=muscleResult['core'], jumps=muscleResult['jumps'])
+            return render_template('15mins.html', rest=rest, target=muscleResult['core'], jumps=muscleResult['jumps'])
 
 
 #10 minutes
@@ -189,7 +197,7 @@ def result():
 
         selection(muscleResult['arms'], 5)
 
-        return render_template('result.html', target=muscleResult['arms'], jumps=muscleResult['jumps'])
+        return render_template('result.html', rest=rest, target=muscleResult['arms'], jumps=muscleResult['jumps'])
 
     elif l == '10mins' and m == 'Legs':
 
@@ -199,7 +207,7 @@ def result():
 
         selection(muscleResult['legs'], 5)
 
-        return render_template('result.html', target=muscleResult['legs'], jumps=muscleResult['jumps'])
+        return render_template('result.html', rest=rest, target=muscleResult['legs'], jumps=muscleResult['jumps'])
 
     elif l == '10mins' and m == 'Core':
 
@@ -209,4 +217,4 @@ def result():
 
             selection(muscleResult['core'], 5)
 
-            return render_template('result.html', target=muscleResult['core'], jumps=muscleResult['jumps'])
+            return render_template('result.html', rest=rest, target=muscleResult['core'], jumps=muscleResult['jumps'])

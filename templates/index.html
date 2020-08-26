@@ -7,12 +7,20 @@
   {% endblock %}
 
   {% block content %}
+    <div id="title">
+        <h1>HIIT Generator</h1>
+    </div>
+
+    <div id="subtitle">
+        <h2><u>Workout Options</u></h2>
+    </div>
+
 
   <form action="/result" method="post">
 
 
     <div id="variables">
-      <h1>Workout Options</h1>
+
 
       <div>
         <h2>&bull; Muscle Group &bull;</h2>
@@ -45,7 +53,7 @@
       <div>
         <h2>&bull; Difficulty &bull;</h2>
 
-          <ul class="options">
+          <ul class="options"  style="padding-left:80px;">
             {% for difficulty in difficulty %}
               <li>
                 <input type="radio" name="difficulty" value="{{difficulty[0]}}">
@@ -55,13 +63,12 @@
           </ul>
       </div>
 
-
-          <p>
-            <input type="submit" value="workout" class="btn-yellow">
-          </p>
-
     </div>
-
+        <div>
+            <p>
+                <input type="submit" value="workout" class="btn-red">
+            </p>
+        </div>
   </form>
 
     <div id="footer">

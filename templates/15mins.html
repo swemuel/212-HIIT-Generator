@@ -4,28 +4,31 @@
 
   {% block header %}
 
-    {{ super() }}
-
-      <style>
-
-        body {
-          background-color: #DFE;
-        }
-
-      </style>
+  
 
   {% endblock %}
 
   {% block content %}
-    <div id="header">
+  <div id="header">
+
+
+      <div id="title">
 
       <h1>Your Workout</h1>
 
-        <p>15 mins</p>
+      </div>
 
-    </div>
+        <h2>15 mins</h2>
 
-    <div id="exercises">
+      <div id="description">
+
+        <h3>Each exercise will be performed for {{rest}}</h3>
+
+      </div>
+  </div>
+
+
+    <div id="variables">
       <div>
         <ol>
           {% for exercise in target %}
@@ -34,6 +37,11 @@
           </li>
           {% endfor %}
         </ol>
+      </div>
+      <div id="rest">
+        1 Minute Rest
+      </div>
+      <div>
 
         <ol>
           {% for exercise in target %}
@@ -42,10 +50,16 @@
           </li>
 
           {% endfor %}
-
-
         </ol>
-        
+
       </div>
-    </div>
+
+
+  </div>
+
+  <div class="center-text">
+      <p>
+        <a class="btn-yellow" href="index.html">Home</a>
+     </p>
+  </div>
   {% endblock %}

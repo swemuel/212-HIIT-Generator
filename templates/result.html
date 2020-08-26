@@ -19,14 +19,22 @@
   {% block content %}
 
     <div id="header">
+      <div id="title">
 
-      <h1>Your Workout</h1>
+        <h1>Your Workout</h1>
 
-        <p>10 mins</p>
+      </div>
+        <h2> <u>10 mins</u> </h2>
+
+      <div id="description">
+
+        <h3>Each exercise will be performed for {{rest}}</h3>
+
+      </div>
 
     </div>
 
-    <div id="exercises">
+    <div id="variables">
       <div>
         <ol>
           {% for exercise in target %}
@@ -35,7 +43,24 @@
           </li>
           {% endfor %}
         </ol>
-
       </div>
+      <div id="rest">
+        No Rest
+      </div>
+      <div>
+        <ol>
+          {% for exercise in target %}
+          <li>
+            {{ exercise[0] }}
+          </li>
+          {% endfor %}
+        </ol>
+      </div>
+    </div>
+
+    <div class="center-text">
+        <p>
+          <a class="btn-yellow" href="/">Home</a>
+       </p>
     </div>
   {% endblock %}

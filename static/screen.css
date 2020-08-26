@@ -1,23 +1,223 @@
+/* google fonts import*/
+@import url ('https://fonts.googleapis.com/css?family=Caveat');
+/* id selectors */
 
 
+#title{
+  text-align: center;
+  font-family: fantasy;
+  font-size: 1.5em;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #F00;
+  background-color: rgba(100,100,100, 0.7);
+  border-color: #F00;
+  border-style: ridge;
+  margin: 40px;
+}
+
+#subtitle{
+  text-align: center;
+  font-family: fantasy;
+  font-size: 1.25em;
+  padding-top: 20px;
+  padding-bottom: 5px;
+  color: #F40;
+}
+
+#rest {
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-bottom: 50px;
+  font-family: fantasy;
+  font-size: 1.4em;
 
 
+}
+
+#description {
+  text-align: center;
+  font-family: fantasy;
+}
+
+#header{
+  text-align: center;
+  font-family: fantasy;
+
+}
+
+#variables {
+  background-color: rgba(125,125,125, 0.7);
+  background-size: 46px;
+  border-bottom: #D40 10px solid;
+  border-top: #D40 10px solid;
+  display: grid;
+  margin: auto;
+  max-width: 1140px;
+  padding:  20px 0;
+  padding-bottom: 2.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  font-family: fantasy;
+}
+
+
+#variables h1 {
+  color: #DB0;
+  text-align: center;
+}
+
+#footer{
+  text-align: center;
+  color: #976;
+  padding-top: 20px;
+}
+
+#variables h2 {
+  margin-top: 0.5em;
+  text-align: center;
+  margin-right: 70px;
+  opacity: 1.0;
+}
+
+
+#variables ul{
+  list-style-type: none;
+  padding-left: 60px;
+}
+
+#variables ol{
+  padding-left: 60px;
+  color: #200;
+}
+
+
+#variables li{
+  font-style: normal;
+  font-size: 1.5em;
+  margin-top: 0.4em;
+  width: 100%;
+
+}
+
+#exercises {
+  background-color: #999;
+  background-size: 46px;
+  border-bottom: #D40 10px solid;
+  border-top: #D40 10px solid;
+  display: grid;
+  margin: auto;
+  max-width: 1140px;
+  padding:  20px 0;
+  padding-bottom: 2.5em;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+}
+
+#exercises ol{
+  padding-left: 2em;
+}
+
+#exercises li{
+  margin-top: 0.4em;
+  width: 100%;
+  padding-left: 2em;
+}
+
+#exercises div {
+  grid-column: span 3;
+  margin: 0 1em;
+}
+
+#variables div {
+  grid-column: span 3;
+  margin: 0 1em;
+}
+
+  /* media query */
+@media only screen and (min-width: 720px) {
+
+  #variables div {
+    grid-column: auto;
+    margin: 0;
+  }
+
+
+    /* media query */
+  @media only screen and (min-width: 720px) {
+
+    #exercises div {
+      grid-column: auto;
+      margin: 0;
+    }
+
+  }
+}
+
+
+.options{
+  color: #000;
+}
+
+.btn-red{
+  text-align: center;
+  background-color: #F40;
+  border: 3px solid #000;
+  border-radius: 5px;
+  color: #FFF;
+  cursor: pointer;
+  margin: auto;
+  display: grid;
+  font-size: 1.5em;
+  padding: 7px 10px 0 10px;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  font-family: fantasy;
+}
+
+.btn-yellow{
+  text-align: center;
+  background-color: #F40;
+  border: 3px solid #000;
+  border-radius: 5px;
+  color: #FFF;
+  cursor: pointer;
+  margin: auto;
+  display: grid;
+  font-size: 1.5em;
+  padding-left: 16px;
+  padding-top: 7px;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto;
+  font-family: fantasy;
+  width: 80px;
+
+.center-text {
+  text-align: center;
+}
+
+.btn-red:hover {
+  color: #FF0;
+  background-color: #D40;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  transition: color 0.5s;
+
+}
 
 body {
 
-  background-color: #222222;
+background-color: #FFE;
+background-image: url('gym2.jpeg');
 
-
-}
-
-h1 {
-  color: #FB0;
 }
 
 h2 {
-  color: #FB0;
-}
-
-li {
-  color: #BBB;
+  color: #D40;
+  font-family: fantasy;
+  opacity: 1.0;
 }
