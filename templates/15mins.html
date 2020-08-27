@@ -4,7 +4,7 @@
 
   {% block header %}
 
-  
+
 
   {% endblock %}
 
@@ -14,21 +14,27 @@
 
       <div id="title">
 
-      <h1>Your Workout</h1>
+      <h1>YOUR HIIT WORKOUT:</h1>
 
       </div>
 
-        <h2>15 mins</h2>
+
 
       <div id="description">
 
         <h3>Each exercise will be performed for {{rest}}</h3>
 
       </div>
+      <div id="subtitle">
+
+        <h2 style='color:black;'> <u>15 Minutes Total</u></h2>
+
+      </div>
   </div>
 
 
     <div id="variables">
+
       <div>
         <ol>
           {% for exercise in target %}
@@ -39,7 +45,7 @@
         </ol>
       </div>
       <div id="rest">
-        1 Minute Rest
+        <p> <u>1 Minute Rest</u> </p>
       </div>
       <div>
 
@@ -59,7 +65,7 @@
 
   <div class="center-text">
       <p>
-        <a class="btn-yellow" href="index.html">Home</a>
+        <a class="btn-yellow" href="/">Home</a>
      </p>
   </div>
   {% endblock %}

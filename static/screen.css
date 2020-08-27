@@ -2,74 +2,103 @@
 @import url ('https://fonts.googleapis.com/css?family=Caveat');
 /* id selectors */
 
+body {
+
+  background-image: url('gym03.jpg');
+  background-color: #FFE;
+  background-position: center;
+  background-size: cover;
+
+}
 
 #title{
   text-align: center;
-  font-family: fantasy;
-  font-size: 1.5em;
+
+  font-size: 1.8em;
   padding-top: 20px;
   padding-bottom: 10px;
-  color: #F00;
-  background-color: rgba(100,100,100, 0.7);
-  border-color: #F00;
-  border-style: ridge;
-  margin: 40px;
+  color: #445;
+  background-color: rgba(100,100,100, 0.4);
+  border-color: #09F;
+  border-style: double;
+  margin: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
+
+
 }
 
-#subtitle{
-  text-align: center;
-  font-family: fantasy;
-  font-size: 1.25em;
-  padding-top: 20px;
-  padding-bottom: 5px;
-  color: #F40;
-}
 
-#rest {
-  padding-top: 100px;
-  padding-left: 100px;
-  padding-bottom: 50px;
-  font-family: fantasy;
+#subtitle {
   font-size: 1.4em;
-
+  color: #000;
 
 }
+
 
 #description {
   text-align: center;
-  font-family: fantasy;
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #F34;
+
 }
 
 #header{
   text-align: center;
-  font-family: fantasy;
 
+
+
+}
+
+#vheader {
+  background-color: rgba(180,180, 180, 0.7);
+  padding: 4px;
+  margin-left: 15px;
+  margin-right: 15px;
 }
 
 #variables {
   background-color: rgba(125,125,125, 0.7);
-  background-size: 46px;
-  border-bottom: #D40 10px solid;
-  border-top: #D40 10px solid;
+  background-size: 44px;
+  border-style: double;
+  border-color: #09F;
   display: grid;
   margin: auto;
+
   max-width: 1140px;
   padding:  20px 0;
   padding-bottom: 2.5em;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  font-family: fantasy;
+  font-family: normal;
+  font-size: 1.2em;
+}
+
+#rest {
+  color: #F34;
+  padding-top: 100px;
+  padding-left: 100px;
+  padding-bottom: 50px;
+
+  font-size: 1.5em;
+
+
 }
 
 
 #variables h1 {
-  color: #DB0;
   text-align: center;
+
+  font-size: 1.7em;
+  padding-top: 5px;
+  padding-bottom: 15px;
+  color: #FF3052;
 }
 
 #footer{
   text-align: center;
-  color: #976;
+  color: #C20;
   padding-top: 20px;
 }
 
@@ -88,7 +117,12 @@
 
 #variables ol{
   padding-left: 60px;
-  color: #200;
+  color: #FFF;
+  background-color: rgb(100,100,100,0.3);
+  padding-top: 20px;
+  padding-bottom: 30px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 
@@ -98,20 +132,6 @@
   margin-top: 0.4em;
   width: 100%;
 
-}
-
-#exercises {
-  background-color: #999;
-  background-size: 46px;
-  border-bottom: #D40 10px solid;
-  border-top: #D40 10px solid;
-  display: grid;
-  margin: auto;
-  max-width: 1140px;
-  padding:  20px 0;
-  padding-bottom: 2.5em;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto;
 }
 
 #exercises ol{
@@ -132,6 +152,10 @@
 #variables div {
   grid-column: span 3;
   margin: 0 1em;
+}
+
+#header h2{
+  color: #D40;
 }
 
   /* media query */
@@ -156,12 +180,13 @@
 
 
 .options{
-  color: #000;
+  color: #FFF;
+
 }
 
 .btn-red{
   text-align: center;
-  background-color: #F40;
+  background-color: #FF3052;
   border: 3px solid #000;
   border-radius: 5px;
   color: #FFF;
@@ -169,12 +194,12 @@
   margin: auto;
   display: grid;
   font-size: 1.5em;
-  padding: 7px 10px 0 10px;
+  padding: 7px 10px 10px 10px;
   transition: background-color 0.5s;
   transition: color 0.5s;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  font-family: fantasy;
+
 }
 
 .btn-yellow{
@@ -193,7 +218,7 @@
   transition: color 0.5s;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: auto;
-  font-family: fantasy;
+
   width: 80px;
 
 .center-text {
@@ -209,15 +234,10 @@
 
 }
 
-body {
 
-background-color: #FFE;
-background-image: url('gym2.jpeg');
-
-}
 
 h2 {
-  color: #D40;
-  font-family: fantasy;
+  color: #F15;
+
   opacity: 1.0;
 }
